@@ -1,8 +1,29 @@
 {
-    "ppl": [
-        {
-            "id": 0,
-            "name": "John"
-        }
-    ]
+  "users": [
+    {
+      "email": "mymail@gmail.com",
+      "password": "$2a$10$RoEvz4ThRRV0MsC/HA184ehUnsTXysUdl1Gx.PD3I9XyCF9H6cQNO",
+      "id": 1
+    },
+    {
+      "email": "myail@gmail.com",
+      "password": "$2a$10$yISjOpJW./sXZ6wzIJqIVucxwrbX0xkuJDMYVvdOLAxCY0M8.FcqK",
+      "id": 2
+    },
+    {
+      "email": "myail@gmdail.com",
+      "password": "$2a$10$efbS5Et8IgnsNR0ZvsOo2eIxAkAoIJW1KqTHU9gcGW.o/rjGmDPQ2",
+      "id": 3
+    },
+    {
+      "email": "myail@gmыdail.com",
+      "password": "$2a$10$yu.WbGqF.7Y8UmJDp8H4oeTNu.3/VguB6XjZ9rAeAr6mFbnUXfYcW",
+      "id": 4
+    },
+    {
+      "email": "myasail@gmыdail.com",
+      "password": "$2a$10$KmSMZWAQbAfOpjDRznP/cOvocFLYhyfqr2jNOuXukVcdjT1E3bNo2",
+      "id": 5
+    }
+  ]
 }

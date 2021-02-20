@@ -7,5 +7,11 @@ import {
   } from "react-router-dom";
 
 export default function Profile() {
-    return <h2>Profile</h2>;
+    return (
+      <div>
+        Profile
+      </div>
+    
+    )
+    
   }
