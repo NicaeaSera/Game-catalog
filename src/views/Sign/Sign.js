@@ -16,7 +16,7 @@ import { AirlineSeatReclineExtraOutlined } from '@material-ui/icons'
 
 
 function sendAuthorisationRequest(login, password){
-    fetch('http://localhost:3000/login', {
+    fetch('http://localhost:3004/login', {
     method: 'POST',
     body: JSON.stringify({ email: login, password: password }),
   headers: {

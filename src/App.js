@@ -6,6 +6,9 @@ import {
   Link
 } from "react-router-dom";
 import { Button } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Toolbar from '@material-ui/core/Toolbar';
 
 import Home from "./views/Home/Home.js";
 import Profile from "./views/Profile/Profile.js";
@@ -74,25 +77,18 @@ export default class App extends Component{
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Button color="primary" href="/">Main page</Button>
-              </li>
-              <li>
-                <Button color="primary" href="/catalog">Catalog</Button>
-              </li>
-              <li>
-                <Button color="primary" href={this.state.logLink}>{this.state.logMsg}" "{this.state.logInStatus}" "{this.state.logLink}</Button>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li>
-                <Link to="/admin">Admin panel</Link>
-              </li>
-            </ul>
-          </nav>
+        <nav> 
+          <AppBar position="relative">
+            <Toolbar>
+              <Button color="inherit" href="/">Main page</Button>
+              <Button color="inherit" href="/catalog">Catalog</Button> 
+              {/*<Button color="inherit" href={this.state.logLink}>{this.state.logMsg}" "{this.state.logInStatus}" "{this.state.logLink}</Button> */}
+              <Button color="inherit" href={this.state.logLink}>{this.state.logMsg}</Button>
+              <Button color="inherit" href="/profile">Profile</Button>  
+              <Button color="inherit" href="/admin">Admin panel</Button>
+            </Toolbar>
+          </AppBar>                     
+        </nav>
 
           <Switch>
             <Route path="/profile">

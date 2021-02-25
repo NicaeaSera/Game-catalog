@@ -15,6 +15,8 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
+    "start-server": "npm-run-all --parallel start start-json-server",
+    "start-json-server": "json-server db.json -m ./node_modules/json-server-auth --port 3004",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

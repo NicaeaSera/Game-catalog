@@ -46,7 +46,7 @@ function sendRegistrationRequest(login, password, confirm_password){
   };
 
   if(login != "" && password === confirm_password && tempA === "@"){
-    fetch('http://localhost:3000/register', {
+    fetch('http://localhost:3004/register', {
       method: 'POST',
       body: JSON.stringify({ email: login, password: password }),
       headers: {
@@ -55,6 +55,7 @@ function sendRegistrationRequest(login, password, confirm_password){
     })      
   .then(response => 
     {
+      console.log(response);
       if(response.ok){
         alert("Success!");
         window.location.href = "/log_in";
@@ -71,10 +72,6 @@ function sendRegistrationRequest(login, password, confirm_password){
   }
   window.location.href = "/registration";
   return
-  
-  
-  
-  
 }
 
 class Registration extends React.Component {

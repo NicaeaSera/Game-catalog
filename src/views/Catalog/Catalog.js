@@ -73,7 +73,7 @@ function Copyright() {
     }
   }));
   
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   
   export default function Catalog() {
     const classes = useStyles();
@@ -81,21 +81,12 @@ function Copyright() {
     return (
       <React.Fragment>
         <CssBaseline />
-        <AppBar position="relative">
-          <Toolbar>
-            <Button color="primary" href="/">Main page</Button>
-            <CameraIcon className={classes.icon} />
-            <Typography variant="h6" color="inherit" noWrap>
-              Album layout
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <main>
           {/* Hero unit */}
           <div className={classes.heroContent}>
             <Container maxWidth="sm">
               <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                Album layout
+                Library
               </Typography>
               {/*
               <Typography variant="h5" align="center" color="textSecondary" paragraph>
@@ -124,7 +115,7 @@ function Copyright() {
             {/* End hero unit */}
             <Grid container spacing={4}>
               {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={6} md={6}>
+                <Grid item key={card} xs={12} sm={6} md={4}>
                   <Card className={classes.card}>                    
                   <Typography gutterBottom variant="h5" component="h2">
                         Name of the game
