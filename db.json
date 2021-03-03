@@ -10,5 +10,74 @@
       "password": "$2a$10$p7pwKi37vm.2s7OULdy8K.DNWH5qVb8SgCbJjWg2EMW7g9dgg8M4.",
       "id": 2
     }
+  ],
+  "games": [
+	{
+		"id": 1,
+		"name": "The Sims 3",
+		"image": "https://upload.wikimedia.org/wikipedia/ru/thumb/7/7d/The_Sims_3_logo.JPG/548px-The_Sims_3_logo.JPG",
+		"description": "The Sims 3 — однопользовательская видеоигра в жанре симулятора жизни, разработанная компанией Maxis под руководством геймдизайнера Рода Хамбла и изданная компанией Electronic Arts. В США игра вышла 2 июня 2009 года для операционных систем персональных компьютеров — Windows и Mac OS X[3]. На территории России The Sims 3 вышла 5 июня 2009 года, её русской локализацией занималась компания «СофтКлаб»[8]. Помимо этого, в 2010 году состоялся выпуск симулятора для игровых приставок PlayStation 3, Xbox 360, Wii и Nintendo DS",
+		"year": 2008,
+		"ganre": "симулятор жизни",
+		"platforms": "Windows, MacOS",
+		"developerId": 1,
+		"publisherId": 2,
+		"iHave": false,
+		"iWant": false,
+		"rating": 3,
+		"notes": "любимая игра сестрички",
+		"rawgId": null
+	},
+	{
+		"id": 2,
+		"name": "Populous: The Beginning",
+		"image": "https://upload.wikimedia.org/wikipedia/ru/c/c5/Populous.jpeg",
+		"description": "Populous: The Beginning — компьютерная игра в жанре стратегии в реальном времени и симулятора бога, третья в серии Populous. Игра была разработана студией Bullfrog и выпущена Electronic Arts для Windows в 1998 году. В 1999 году вышла версия для консоли PlayStation. В отличие от предыдущих игр серии, в которых игрок принимал на себя роль бестелесного божества, в Populous: The Beginning под его управлением находится персонаж-шаман, возглавляющий племя первобытных людей. В ходе основной кампании племя перемещается с одной планеты на другую, подчиняя себе другие племена и разыскивая новые источники магии; конечная цель для шамана — стать полноценным божеством.",
+		"year": 1998,
+		"ganre": "стратегия в реальном времени",
+		"platforms": "Windows, PS",
+		"developerId": 3,
+		"publisherId": 2,
+		"iHave": false,
+		"iWant": true,
+		"rating": 5,
+		"notes": "братик играл в детсте. крутая!",
+		"rawgId": null
+	}
+  ],
+  "companies": [
+	{
+		"id": 1,
+		"name": "Maxis",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Maxis_logo_new.svg/400px-Maxis_logo_new.svg.png",
+		"description": "Maxis — американская компания по разработке компьютерных игр, принадлежащая Electronic Arts. Основана в 1987 году как Maxis Software, а затем стала известна как Maxis.",
+		"year": 1987,
+		"rating": 4,
+		"notes": null,
+		"isPublisher": false,
+		"rawgId": null		
+	},
+	{
+		"id": 2,
+		"name": "Electronic Arts",
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Maxis_logo_new.svg/400px-Maxis_logo_new.svg.pnghttps://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Electronic_Arts_Logo_2020.png/400px-Electronic_Arts_Logo_2020.png",
+		"description": "Electronic Arts (или EA) — американская корпорация, занимающаяся распространением видеоигр. Штаб-квартира компании расположена в городе Редвуд-Сити, Калифорния.",
+		"year": 1982,
+		"rating": 3,
+		"notes": "Они ещё футбольчики всякие делают",
+		"isPublisher": true,
+		"rawgId": null		
+	},
+	{
+		"id": 3,
+		"name": "Bullfrog Productions",
+		"image": "https://upload.wikimedia.org/wikipedia/ru/thumb/b/be/Bullfrog-logo.svg/235px-Bullfrog-logo.svg.png",
+		"description": "Bullfrog Productions (bullfrog с англ. — «лягушка-бык») — британский разработчик компьютерных игр из Гилфорда, Англия. Компания основана в 1987 году Питером Молиньё и Лесом Эдгаром. Компания стала известна после выхода в 1989 году игры Populous, а получила признание после выхода таких широко известных игр как Theme Park, Magic Carpet, Syndicate и Dungeon Keeper. Название компания получила от орнамента, которым был украшен офис Taurus Impact Systems, другой компании Молиньё и Эдгара и предшественника Bullfrog, в которой они занимались разработкой программного обеспечения для бизнеса. Bullfrog Productions была основана как независимая компания после случая, когда в Commodore перепутали Taurus с другой компанией из-за схожести названия.",
+		"year": 1987,
+		"rating": 4,
+		"notes": "Старенькая, но крутая!",
+		"isPublisher": false,
+		"rawgId": null		
+	}
   ]
 }
