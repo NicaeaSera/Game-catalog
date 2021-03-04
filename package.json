@@ -15,8 +15,9 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start-server": "npm-run-all --parallel start start-json-server",
+    "start-server": "npm-run-all --parallel start start-json-server start-catalog-json-server",
     "start-json-server": "json-server db.json -m ./node_modules/json-server-auth --port 3004",
+    "start-catalog-json-server": "json-server  ./src/views/Catalog/catalog_db.json --port 3005",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
