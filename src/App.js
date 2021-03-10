@@ -80,12 +80,24 @@ export default class App extends Component{
         <nav> 
           <AppBar position="relative">
             <Toolbar>
-              <Button color="inherit" href="/">Main page</Button>
-              <Button color="inherit" href="/catalog">Catalog</Button> 
-              {/*<Button color="inherit" href={this.state.logLink}>{this.state.logMsg}" "{this.state.logInStatus}" "{this.state.logLink}</Button> */}
-              <Button color="inherit" href={this.state.logLink}>{this.state.logMsg}</Button>
-              <Button color="inherit" href="/profile">Profile</Button>  
-              <Button color="inherit" href="/admin">Admin panel</Button>
+              <Link to="/" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Main page</Button>
+              </Link>    
+              <Link to="/catalog" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Catalog</Button> 
+              </Link> 
+              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">{this.state.logMsg}</Button>
+              </Link> 
+              <Link to="/profile" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Profile</Button>
+              </Link> 
+              <Link to="/admin" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Admin panel</Button>
+              </Link>           
+              
+              {/*<Button color="inherit" href={this.state.logLink}>{this.state.logMsg}" "{this.state.logInStatus}" "{this.state.logLink}</Button> */} 
+              
             </Toolbar>
           </AppBar>                     
         </nav>
