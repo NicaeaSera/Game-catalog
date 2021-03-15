@@ -12,6 +12,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+  import Pagination from '@material-ui/lab/Pagination';
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,6 +40,11 @@ const Copyright = props => {
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
+  },
+  root: {
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -74,58 +80,56 @@ const useStyles = makeStyles((theme) => ({
 
 const Catalog = props => {
 
-  const [cardsOnPage, setCardsOnPage] = useState(3);
+  const [cardsOnPage, setCardsOnPage] = useState(5);
   const [cards, setCards] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(() => getCurrentPage());
+  const [page, setPage] = useState(0);
+
+
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
 
   const classes = useStyles();
 
   function getCurrentPage() {
     let page = [] = (document.URL).split("/catalog/");
     if(page.length != 1){
-      let a = +page[1];
+      let a = parseInt(page[1]);
     if(!isNaN(a))
       if(a > 0)
-        return a    
+        return a;    
     }
-    return 0
+    return 1;
   }
+
+  const moveTo = (event, value) => {  
+    console.log(value);
+    setCurrentPage(value);  
+    filterGames(value, cardsOnPage).then(data => {
+      console.log(value, data.Data);
+      setCards(data.Data);
+    })
+  }
+
 
   useEffect(() => {
     // аналог componentDidMount
     setCurrentPage(getCurrentPage());  
     filterGames(currentPage, cardsOnPage).then(data => {
       setCards(data.Data);
-      setTotalCount(+data.Count);
+      setTotalCount(parseInt(data.Count));
+            
     })
-    setPageCount(Math.ceil((totalCount/cardsOnPage).toFixed(10)));
-    sessionStorage.setItem("currentPage", getCurrentPage());
-    sessionStorage.setItem("nextPage", +sessionStorage.currentPage+1);
-    if(+sessionStorage.currentPage == 0 || +sessionStorage.currentPage == 1);
-    sessionStorage.setItem("previousPage", 1);
-
-
+    console.log(cards, totalCount, pageCount);
+    
     return () => {
       // аналог componentWillUnmount
     };
   }, []);
   
-  function moveTo(page){  
-    setCurrentPage(page);  
-    filterGames(currentPage, cardsOnPage).then(data => {
-    setCards(data.Data);
-    setTotalCount(+data.Count);
-    })
-    setPageCount(Math.ceil((totalCount/cardsOnPage).toFixed(10)));
-    sessionStorage.setItem("currentPage", getCurrentPage());
-    sessionStorage.setItem("nextPage", +sessionStorage.currentPage+1);
-    if(+sessionStorage.currentPage == 0 || +sessionStorage.currentPage == 1);
-    sessionStorage.setItem("previousPage", 1);
-    
-  }
-
 
   return (
     <React.Fragment>
@@ -137,54 +141,21 @@ const Catalog = props => {
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Library
             </Typography> 
-           <p>
-              {console.log(cards)}
-           </p>
-             
-         
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="xl">
-          <Grid container spacing={4}>            
+          <Grid container spacing={4}> 
             {cards.map((card) => (
               <Grid item key={`card-${card.id}`} xs={12} sm={6} md={4}>
-
                 <ContentCard post={card} />
-              
               </Grid>
             ))}
           </Grid>
           <Grid justify="center" container spacing={4}>
-            <Link to="/catalog">
-              <Button name="first">
-                First</Button>
-            </Link>            
-            <Link to={`/catalog/${sessionStorage.previousPage}`}>
-              <Button name="previous">
-                Previous
-              </Button>
-            </Link>
-            
-          
-            <Button>
-              {currentPage}
-            </Button>
-            <Button onClick={()=>{console.log(pageCount, totalCount, document.URL, currentPage, cards)}}>
-              Check
-            </Button>
-          
-          <Link to={`/catalog/${sessionStorage.nextPage}`}>
-            <Button name="next">
-              Next
-            </Button>
-          </Link>
-            
-            <Link to={`/catalog/${pageCount-1}`}>
-              <Button name="last">
-                Last
-              </Button> 
-            </Link>            
-                     
+            <div className={classes.root}>
+                <Typography>Testing page: {currentPage}</Typography>
+                <Pagination count={Math.ceil((totalCount/cardsOnPage).toFixed(10))} page={currentPage} onChange={moveTo} />
+              </div>
           </Grid>
           <Switch>
             <Route path="/catalog/">
