@@ -16,6 +16,7 @@ import Sign from "./views/Sign/Sign.js";
 import Admin from "./views/Admin/Admin.js";
 import Registration from "./views/Registration/Registration.js";
 import Catalog from "./views/Catalog/Catalog.js";
+import Games from "./views/Games/Games.js";
 
 
 if(localStorage.isAuthorised != "NOT_LOGGED_IN" && localStorage.isAuthorised !="LOGGED_IN"){
@@ -111,6 +112,9 @@ export default class App extends Component{
             </Route>
             <Route path="/registration">
               <Registration />
+            </Route>
+            <Route path="/catalog/game/">
+              <Games />
             </Route>
             <Route path="/catalog">
               <Catalog />

@@ -11,7 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Tooltip from '@material-ui/core/Tooltip'
 import Grid from '@material-ui/core/Grid'
-
+import {Link} from "react-router-dom";
 import StarIcon from '@material-ui/icons/Star'
 import StarBorderIcon from '@material-ui/icons/StarBorder'
 
@@ -22,6 +22,10 @@ const useStyles = makeStyles(styles);
 const ContentCard = props => {
   const classes = useStyles();
   const { post } = props;
+
+  function viewMoreInfo(){
+
+  }
 
   return (
     // можно раскомментироать компоненту чтобы сделать саму карточку кликабельной
@@ -47,8 +51,10 @@ const ContentCard = props => {
             </Typography>
           </Tooltip>
           <Grid container spacing={1} justify="flex-end">
-            <Button size="small" color="primary">View</Button>
-            <Button size="small" color="primary">Edit</Button>
+            <Link to={`/catalog/game/${post.id}`}>
+              <Button size="small" color="primary">View</Button>
+            </Link>            
+            {/*<Button size="small" color="primary">Edit</Button>*/}
           </Grid>
         </CardContent>
       </div>

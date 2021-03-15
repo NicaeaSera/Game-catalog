@@ -1,4 +1,3 @@
-import { Games } from '@material-ui/icons';
 import { baseUrl, defaultHeaders } from './Api'
 
 const entityUrl = 'games'
@@ -23,8 +22,6 @@ const filter = (page = 1, size = 12, filterParams = {}) => {
     method: 'GET',
     ...baseRequestSettings
   }).then(response => {
-    //console.log(response.headers.get("Link"));
-    //let navLinks = parseData(response.headers.get("Link"));  
     return response.json().then(data => ({
       Data: data, // данные что пришли с сервера
       Count: response.headers.get('X-Total-Count'), // общее кол-во карточек, нужно для пагинации
