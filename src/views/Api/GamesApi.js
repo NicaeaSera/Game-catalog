@@ -28,7 +28,20 @@ const filter = (page = 1, size = 12, filterParams = {}) => {
     }))
   })
 }
+// запрос на полную информацию об игре
+const getGameData = (id = 1) =>{
+  const url =`${baseUrl + entityUrl}?id=${id}`;
+
+  return fetch(url, {
+    method: 'GET',
+    ...baseRequestSettings
+  }).then(response => {
+    return response.json().then(data => ({
+      Data: data
+    }))
+  })
+}
 
 export {
-  filter
+  filter, getGameData
 }

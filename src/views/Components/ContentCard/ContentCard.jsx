@@ -23,10 +23,6 @@ const ContentCard = props => {
   const classes = useStyles();
   const { post } = props;
 
-  function viewMoreInfo(){
-
-  }
-
   return (
     // можно раскомментироать компоненту чтобы сделать саму карточку кликабельной
     // <CardActionArea component="a" href="#" key={`content-card-${post.id}`}>
