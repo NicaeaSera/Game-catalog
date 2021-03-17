@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid'
 import {Link} from "react-router-dom";
 import StarIcon from '@material-ui/icons/Star'
 import StarBorderIcon from '@material-ui/icons/StarBorder'
+import Container from '@material-ui/core/Container';
 
 import styles from './GCard.styles'
 
@@ -20,42 +21,71 @@ const useStyles = makeStyles(styles);
 const GameCard = props => {
   const classes = useStyles();
   const { post } = props;
+  const { developer } = props;
+  const { publisher } = props;
+  
+  console.log("props");
+  console.log(props);
 
+  console.log("post");
+  console.log(post);
+
+  console.log("developer");
+  console.log(developer);
+  console.log("publisher");
+  console.log(publisher);
+  if(post === undefined || developer === undefined || publisher === undefined)
+    return(<Grid></Grid>)
   return (
     <React.Fragment>
-      <Grid>
-        <Typography component="h2" variant="h5">
-          {post.name}
-        </Typography>
-      </Grid>  
-      <Grid>
-        <Card className={classes.card}>    
-          <Hidden xsDown>
+      <Container maxWidth="false">
+        <Grid>
+          <Typography component="h2" variant="h5">
+            {post.name}
+          </Typography>
+        </Grid>  
+        <Grid container spacing={2}>
             <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
-          </Hidden>
-          <div className={classes.cardDetails}>
+            {/*<Hidden xsDown>*
+              <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
+            </Hidden>*/}
+          <Grid className={classes.cardDetails}>
             <CardContent>
+              <Typography>
+                {`Жанр: ${post.ganre}`}
+              </Typography>
+              <Typography>
+                {`Платформы: ${post.platforms}`}
+              </Typography>
+              <Typography>
+                {`Дата выхода: ${post.year}`}
+              </Typography>
+              <Typography>
+                {`Разработчик: ${developer.name}`}
+              </Typography>
+              <Typography>
+                {`Издатель: ${publisher.name}`}
+              </Typography>
+              <Typography>
+                {`Рейтинг: `}
+              </Typography>
               <Typography variant="subtitle1" color="textSecondary">
                 {([0,0,0,0,0]).map((rate, idx) => idx < post.rating 
                   ? <StarIcon key={`content-rating-${post.id}-${idx}`} /> 
                   : <StarBorderIcon key={`content-rating-${post.id}-${idx}`} />
                 )}
-              </Typography>             
-              
+              </Typography>
+
             </CardContent>
-          </div>
-        </Card>
-      </Grid>    
-      <Grid>
-        <Tooltip title={post.description}>
+          </Grid>          
+        
+        </Grid>    
+        <Grid>
           <Typography variant="subtitle1" paragraph className={classes.cardDescription}>
               {post.description}
           </Typography>
-        </Tooltip>
-      </Grid>
-      
-      
-      
+        </Grid>
+      </Container>      
     </React.Fragment>    
   )
 }

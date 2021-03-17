@@ -3,10 +3,10 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles'
 import { getGameData } from '../Api/GamesApi'
 import { getCompanyData } from '../Api/GamesApi'
-import GameCard from '../Games/GameCard'
+import CompanyCard from '../Games/GameCard'
 
-function getGameId() {
-    let arr = [] = (document.URL).split("/catalog/game/");
+function getCompanyId() {
+    let arr = [] = (document.URL).split("/companies/company/");
     if(arr.length != 1){
       let a = parseInt(arr[1]);
     if(!isNaN(a))
@@ -17,32 +17,27 @@ function getGameId() {
 }
 
 
-class Games extends React.Component{
+class Company extends React.Component{
 
     constructor(props) {
         super(props);
         this.state = {
-          gameId: getGameId(),
-          developerId: 0,
+          companyId: getCompanyId(),
           publisherId: 0,
-          gameData: [],
-          developerData: [],
-          publisherData:[],
+          companyData: [],         
       }
     }
     
       
     componentDidMount() {
-      getGameData(getGameId()).then(data => {
-        console.log("asdasdads", data.Data[0].developerId, data.Data[0].publisherId);
-        this.setState({gameData: data.Data});
-        this.setState({developerId: data.Data[0].developerId});
-        this.setState({publisherId: data.Data[0].publisherId});        
+      getCompanyData(getCompanyId()).then(data => {
+        console.log("asdasdads", data.Data[0]);
+        this.setState({companyData: data.Data});
         getCompanyData(this.state.developerId).then(data => {
           this.setState({developerData: data.Data})
         })
         getCompanyData(this.state.publisherId).then(data => {
-          this.setState({publisherData: data.Data})
+          this.setState({publisherData: data.Data}) //
         })
       })
     }
@@ -53,10 +48,10 @@ class Games extends React.Component{
 
     render(){
         const { classes } = this.props
-        if(this.state.gameData.length === 1)
+        if(this.state.companyData.length === 1)
         return (
            <Grid>
-               <GameCard post={this.state.gameData[0]} developer={this.state.developerData[0]} publisher={this.state.publisherData[0]} />
+               <CompanyCard post={this.state.companyData[0]} />
            </Grid>
         ) 
         return (<Grid></Grid>)
@@ -68,4 +63,4 @@ const styles = theme => ({
   
 })
 
-export default withStyles(styles)(Games)
+export default withStyles(styles)(Company)

@@ -17,6 +17,8 @@ import Admin from "./views/Admin/Admin.js";
 import Registration from "./views/Registration/Registration.js";
 import Catalog from "./views/Catalog/Catalog.js";
 import Games from "./views/Games/Games.js";
+import Companies from "./views/Companies/Companies.js";
+import Company from "./views/Companies/Company.js";
 
 
 if(localStorage.isAuthorised != "NOT_LOGGED_IN" && localStorage.isAuthorised !="LOGGED_IN"){
@@ -90,6 +92,9 @@ export default class App extends Component{
               <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">{this.state.logMsg}</Button>
               </Link> 
+              <Link to="/companies" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Companies</Button>
+              </Link>    
               <Link to="/profile" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Profile</Button>
               </Link> 
@@ -118,6 +123,12 @@ export default class App extends Component{
             </Route>
             <Route path="/catalog">
               <Catalog />
+            </Route>
+            <Route path="/companies/company/">
+              <Company />
+            </Route>
+            <Route path="/companies">
+              <Companies />
             </Route>
             <Route path="/admin">
               <Admin />

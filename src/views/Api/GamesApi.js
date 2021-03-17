@@ -28,10 +28,41 @@ const filter = (page = 1, size = 12, filterParams = {}) => {
     }))
   })
 }
+
+const getCompaniesList = (page = 1, size = 12, filterParams = {}) => {
+  const url = `${baseUrl}companies?_page=${page}&_limit=${size}`;
+  if (Object.keys(filterParams).length > 0) {
+    Object.keys(filterParams).forEach(key => {
+      url += `&${key}=${filterParams[key]}`
+    });
+  }
+  return fetch(url, {
+    method: 'GET',
+    ...baseRequestSettings
+  }).then(response => {
+    return response.json().then(data => ({
+      Data: data,
+      Count: response.headers.get('X-Total-Count'),
+    }))
+  })
+}
+
 // запрос на полную информацию об игре
 const getGameData = (id = 1) =>{
   const url =`${baseUrl + entityUrl}?id=${id}`;
+  return fetch(url, {
+    method: 'GET',
+    ...baseRequestSettings
+  }).then(response => {
+    return response.json().then(data => ({
+      Data: data
+    }))
+  })
+}
 
+// запрос на полную информацию о компании
+function getCompanyData(id = 1){
+  const url =`${baseUrl}companies?id=${id}`;
   return fetch(url, {
     method: 'GET',
     ...baseRequestSettings
@@ -43,5 +74,5 @@ const getGameData = (id = 1) =>{
 }
 
 export {
-  filter, getGameData
+  filter, getGameData, getCompanyData, getCompaniesList
 }
