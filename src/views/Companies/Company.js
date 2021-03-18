@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles'
-import { getGameData } from '../Api/GamesApi'
 import { getCompanyData } from '../Api/GamesApi'
-import CompanyCard from '../Games/GameCard'
+import CompanyCard from '../Companies/CompanyCard'
+import { filter as filterGames } from '../Api/GamesApi'
 
 function getCompanyId() {
     let arr = [] = (document.URL).split("/companies/company/");
@@ -24,7 +24,8 @@ class Company extends React.Component{
         this.state = {
           companyId: getCompanyId(),
           publisherId: 0,
-          companyData: [],         
+          companyData: [],  
+          gameCards: [],       
       }
     }
     
@@ -33,13 +34,12 @@ class Company extends React.Component{
       getCompanyData(getCompanyId()).then(data => {
         console.log("asdasdads", data.Data[0]);
         this.setState({companyData: data.Data});
-        getCompanyData(this.state.developerId).then(data => {
-          this.setState({developerData: data.Data})
-        })
-        getCompanyData(this.state.publisherId).then(data => {
-          this.setState({publisherData: data.Data}) //
-        })
+        filterGames(1, 6, {developerId: this.state.companyId}).then(data => {
+          console.log(data.Data)
+          this.setState({gameCards: data.Data})              
       })
+      })
+      
     }
 
     componentWillUnmount() {
@@ -51,7 +51,7 @@ class Company extends React.Component{
         if(this.state.companyData.length === 1)
         return (
            <Grid>
-               <CompanyCard post={this.state.companyData[0]} />
+               <CompanyCard post={this.state.companyData[0]} games={this.state.gameCards} />
            </Grid>
         ) 
         return (<Grid></Grid>)

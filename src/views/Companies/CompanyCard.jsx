@@ -16,23 +16,36 @@ import StarIcon from '@material-ui/icons/Star'
 import StarBorderIcon from '@material-ui/icons/StarBorder'
 
 import styles from './CsCard.style'
+import SmallCard from '../Companies/SmallCard'
 
 
 const useStyles = makeStyles(styles);
 
 const CompanyCard = props => {
   const classes = useStyles();
-  const { post } = props;
-  // можно добавить больше данных
+  const { post } = props; 
+  const { games } = props; 
+  console.log("props here"); 
+  console.log(props);
+  console.log("post here"); 
+  console.log(post);
+  console.log("games"); 
+  console.log(games); 
   return (
-    <Card className={classes.card}>
-      <Hidden xsDown>
-        <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
-      </Hidden>
-      <div className={classes.cardDetails}>
-        <CardContent>
-          <Typography component="h2" variant="h5">
-            {post.name}
+    <Grid>
+      <Typography component="h2" variant="h5">
+        {post.name}
+      </Typography>
+      <Grid container>
+        <Grid container className={classes.imageBox}>
+          <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
+        </Grid>
+        <Grid container>
+          <Typography>
+            {`Дата основания: ${post.year}`}
+          </Typography>
+          <Typography>
+            {`Руководитель: ${post.year}`}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
             {([0,0,0,0,0]).map((rate, idx) => idx < post.rating 
@@ -40,19 +53,23 @@ const CompanyCard = props => {
               : <StarBorderIcon key={`content-rating-${post.id}-${idx}`} />
             )}
           </Typography>
-          <Tooltip title={post.description}>
-            <Typography variant="subtitle1" paragraph className={classes.cardDescription}>
-                {post.description}
-            </Typography>
-          </Tooltip>
-          <Grid container spacing={1} justify="flex-end">
-            <Link to={`/companies/company/${post.id}`}>
-              <Button size="small" color="primary">More..</Button>
-            </Link>
-          </Grid>
-        </CardContent>
-      </div>
-    </Card>
+        </Grid>
+      </Grid>
+      
+        <Typography variant="subtitle1" paragraph className={classes.cardDescription}>
+          {post.description}
+        </Typography>
+        <Typography>
+          Еще от издателя:
+        </Typography>
+        <Grid container direction="row" justify="flex-start" alignItems="stretch">
+          {games.map((game) =>(
+           <Grid item key={`game-${game.id}`} xs={6} sm={3} md={2}>
+              <SmallCard post={game} />
+            </Grid>
+            ))}
+        </Grid>
+    </Grid>
   )
 }
 

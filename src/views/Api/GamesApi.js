@@ -10,7 +10,7 @@ const baseRequestSettings = {
 // запрос на игры по-фильтру
 const filter = (page = 1, size = 12, filterParams = {}) => {
   // генерируем ссылку
-  const url = `${baseUrl + entityUrl}?_page=${page}&_limit=${size}`;
+  let url = `${baseUrl + entityUrl}?_page=${page}&_limit=${size}`;
   //если переданы доп. параметры для фильтрации -- дополняем ссылку
   if (Object.keys(filterParams).length > 0) {
     Object.keys(filterParams).forEach(key => {

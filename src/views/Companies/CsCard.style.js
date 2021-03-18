@@ -1,12 +1,13 @@
 const styles = theme => ({
-    card: {
-      display: 'flex',
+    imageBox: {
+     width: 300,
     },
     cardDetails: {
       flex: 1,
     },
     cardMedia: {
-      width: 140,
+      height: 400,
+      width: 600,
     },
     cardDescription: {
       display: 'box',
