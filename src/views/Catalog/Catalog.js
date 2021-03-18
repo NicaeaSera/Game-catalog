@@ -79,20 +79,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Catalog = props => {
-
-  const [cardsOnPage, setCardsOnPage] = useState(5);
-  const [cards, setCards] = useState([]);
-  const [pageCount, setPageCount] = useState(0);
-  const [totalCount, setTotalCount] = useState(0);
-  const [currentPage, setCurrentPage] = useState(() => getCurrentPage());
-  const [page, setPage] = useState(0);
-
-
-  const handleChange = (event, value) => {
-    setPage(value);
-  };
+  // можно добавить больше функций контроля содержимого страницы
+  const [cardsOnPage, setCardsOnPage] = useState(5);                              // число карточек на странице
+  const [cards, setCards] = useState([]);                                         // объект с массивом карточек
+  const [totalCount, setTotalCount] = useState(0);                                // общее числор карточек
+  const [currentPage, setCurrentPage] = useState(() => getCurrentPage());         // текущая страница береться из адресной строки
 
   const classes = useStyles();
+
 
   function getCurrentPage() {
     let page = [] = (document.URL).split("/catalog/");
@@ -105,8 +99,8 @@ const Catalog = props => {
     return 1;
   }
 
-  const moveTo = (event, value) => {  
-    console.log(value);
+  const moveTo = (event, value) => {                                              // функция передвижения между страницами, меняет адресную строку
+    console.log(value);                                                           // и массив карточек для текущей страницы
     setCurrentPage(value);  
     filterGames(value, cardsOnPage).then(data => {
       console.log(value, data.Data);
@@ -123,7 +117,7 @@ const Catalog = props => {
       setTotalCount(parseInt(data.Count));
             
     })
-    console.log(cards, totalCount, pageCount);
+    console.log(cards, totalCount);
     
     return () => {
       // аналог componentWillUnmount
@@ -144,6 +138,7 @@ const Catalog = props => {
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="xl">
+          {/*Отображение карточек через функцию ContentCard*/}
           <Grid container spacing={4}> 
             {cards.map((card) => (
               <Grid item key={`card-${card.id}`} xs={12} sm={6} md={4}>
@@ -154,6 +149,7 @@ const Catalog = props => {
           <Grid justify="center" container spacing={4}>
             <div className={classes.root}>
                 <Typography>Testing page: {currentPage}</Typography>
+                {/* пагинация вычисляет общее число страниц по общему числу карточек и их количеству на странице*/}
                 <Pagination count={Math.ceil((totalCount/cardsOnPage).toFixed(10))} page={currentPage} onChange={moveTo} />
               </div>
           </Grid>

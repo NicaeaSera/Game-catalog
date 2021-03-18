@@ -47,6 +47,7 @@ const ContentCard = props => {
             </Typography>
           </Tooltip>
           <Grid container spacing={1} justify="flex-end">
+            {/* переход на страницу с более подробной информацией*/}
             <Link to={`/catalog/game/${post.id}`}>
               <Button size="small" color="primary">View</Button>
             </Link>            

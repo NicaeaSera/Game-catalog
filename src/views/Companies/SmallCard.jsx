@@ -25,6 +25,7 @@ const useStyles = makeStyles({
     },
   });
 
+// небольшая карточка для витрины игр на основную страницу компании
 const SmallCard = props => {
   const classes = useStyles();
   const { post } = props;
@@ -33,7 +34,8 @@ const SmallCard = props => {
 
   return (    
     <Card className={classes.card}>
-        <CardActionArea component="a" href="#" key={`content-card-${post.id}`}>
+      {/* карточка кликабельна, переход на страницу с подробной информацией об игре*/}
+        <CardActionArea component="a" href={`/catalog/game/${post.id}`} key={`content-card-${post.id}`}>
             <Hidden xsDown>
                 <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
             </Hidden>

@@ -25,16 +25,6 @@ import { render } from '@testing-library/react';
 import { getCompanyData } from '../Api/GamesApi'
 import { getCompaniesList } from '../Api/GamesApi'
 
-function getCompanyId() {
-    let arr = [] = (document.URL).split("/catalog/game/");
-    if(arr.length != 1){
-      let a = parseInt(arr[1]);
-    if(!isNaN(a))
-      if(a > 0)
-        return a;    
-    }
-    return 1;
-}
 
 function getCurrentPage() {
   let page = [] = (document.URL).split("/companies/");
@@ -61,6 +51,7 @@ class Companies extends React.Component{
     }
   }
 
+  // перемещение по страницам пагинации с обновлением адресной строки и массива отображаемых компаний
   moveTo(event, value){  
     console.log(value);
     this.setState({currentPage: value});
@@ -104,6 +95,7 @@ class Companies extends React.Component{
           </div>
           <Container className={classes.cardGrid} maxWidth="xl">
             <Grid justify="center" container spacing={4}> 
+            {/* прорисовка карточек*/}
               {this.state.companiesList.map((company) => (
                 <Grid item key={`company-${company.id}`} xs={12} sm={12} md={8}>
                   <CompaniesCard post={company} />
@@ -113,6 +105,7 @@ class Companies extends React.Component{
             <Grid justify="center" container spacing={4}>
               <div className={classes.root}>
                   <Typography>Testing page: {this.state.currentPage}</Typography>
+                  {/* пагинация */}
                   <Pagination count={Math.ceil((this.state.companiesTotalCount/this.state.companiesOnPage).toFixed(10))} page={this.state.currentPage} onChange={this.moveTo} />
                 </div>
             </Grid>

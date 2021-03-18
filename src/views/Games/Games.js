@@ -16,7 +16,7 @@ function getGameId() {
     return 1;
 }
 
-
+// страница отображения информации об игре
 class Games extends React.Component{
 
     constructor(props) {
@@ -33,6 +33,7 @@ class Games extends React.Component{
     
       
     componentDidMount() {
+      // получаем данные об игре из импортируемой функции
       getGameData(getGameId()).then(data => {
         console.log("asdasdads", data.Data[0].developerId, data.Data[0].publisherId);
         this.setState({gameData: data.Data});
@@ -56,6 +57,7 @@ class Games extends React.Component{
         if(this.state.gameData.length === 1)
         return (
            <Grid>
+             {/* используем функцию для прорисовки данных*/}
                <GameCard post={this.state.gameData[0]} developer={this.state.developerData[0]} publisher={this.state.publisherData[0]} />
            </Grid>
         ) 

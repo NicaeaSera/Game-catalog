@@ -23,6 +23,7 @@ const CompaniesCard = props => {
   const classes = useStyles();
   const { post } = props;
   // можно добавить больше данных
+  // прорисовывает карточки с данными компании
   return (
     <Card className={classes.card}>
       <Hidden xsDown>
@@ -45,6 +46,7 @@ const CompaniesCard = props => {
             </Typography>
           </Tooltip>
           <Grid container spacing={1} justify="flex-end">
+            {/* переход на страницу с более подробной информацией*/}
             <Link to={`/companies/company/${post.id}`}>
               <Button size="small" color="primary">More..</Button>
             </Link>

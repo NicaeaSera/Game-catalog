@@ -51,6 +51,7 @@ class Company extends React.Component{
         if(this.state.companyData.length === 1)
         return (
            <Grid>
+             {/* функция прорисовки информации о компании*/}
                <CompanyCard post={this.state.companyData[0]} games={this.state.gameCards} />
            </Grid>
         ) 

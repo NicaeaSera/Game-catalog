@@ -29,6 +29,7 @@ const filter = (page = 1, size = 12, filterParams = {}) => {
   })
 }
 
+// запрос на массив компаний, возвращает promise
 const getCompaniesList = (page = 1, size = 12, filterParams = {}) => {
   const url = `${baseUrl}companies?_page=${page}&_limit=${size}`;
   if (Object.keys(filterParams).length > 0) {

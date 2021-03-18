@@ -23,6 +23,7 @@ const useStyles = makeStyles(styles);
 
 const CompanyCard = props => {
   const classes = useStyles();
+  // входные данные, взяты из Company.js
   const { post } = props; 
   const { games } = props; 
   console.log("props here"); 
@@ -63,6 +64,7 @@ const CompanyCard = props => {
           Еще от издателя:
         </Typography>
         <Grid container direction="row" justify="flex-start" alignItems="stretch">
+          {/* добавлена небольшая витрина из других игр компании*/}
           {games.map((game) =>(
            <Grid item key={`game-${game.id}`} xs={6} sm={3} md={2}>
               <SmallCard post={game} />
