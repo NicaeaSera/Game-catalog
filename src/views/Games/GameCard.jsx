@@ -52,7 +52,7 @@ const GameCard = props => {
           <Grid className={classes.cardDetails}>
             <CardContent>
               <Typography>
-                {`Жанр: ${post.ganre}`}
+                {`Жанр: ${post.genre}`}
               </Typography>
               <Typography>
                 {`Платформы: ${post.platforms}`}

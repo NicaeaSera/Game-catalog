@@ -19,6 +19,7 @@ import Catalog from "./views/Catalog/Catalog.js";
 import Games from "./views/Games/Games.js";
 import Companies from "./views/Companies/Companies.js";
 import Company from "./views/Companies/Company.js";
+import DataCreationPage from "./views/DB_Editor/Create.js";
 
 
 if(localStorage.isAuthorised != "NOT_LOGGED_IN" && localStorage.isAuthorised !="LOGGED_IN"){
@@ -88,10 +89,7 @@ export default class App extends Component{
               </Link>    
               <Link to="/catalog" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Catalog</Button> 
-              </Link> 
-              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
-                <Button color="inherit">{this.state.logMsg}</Button>
-              </Link> 
+              </Link>
               <Link to="/companies" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Companies</Button>
               </Link>    
@@ -100,8 +98,10 @@ export default class App extends Component{
               </Link> 
               <Link to="/admin" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Admin panel</Button>
-              </Link>           
-              
+              </Link>       
+              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">{this.state.logMsg}</Button>
+              </Link>
               {/*<Button color="inherit" href={this.state.logLink}>{this.state.logMsg}" "{this.state.logInStatus}" "{this.state.logLink}</Button> */} 
               
             </Toolbar>
@@ -131,7 +131,7 @@ export default class App extends Component{
               <Companies />
             </Route>
             <Route path="/admin">
-              <Admin />
+              <DataCreationPage />
             </Route>
             <Route path="/log_out">
               <LogOut />

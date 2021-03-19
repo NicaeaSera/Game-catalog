@@ -16,6 +16,16 @@
       "id": 3
     }
   ],
+  "test": [
+    {
+      "action": "2",
+      "id": 1
+    },
+    {
+      "action": "1",
+      "id": 2
+    }
+  ],
   "games": [
     {
       "id": 1,
@@ -160,6 +170,19 @@
       "rating": 3,
       "notes": "любимая игра сестрички",
       "rawgId": null
+    },
+    {
+      "name": "Space Mafness",
+      "image": "https://media.rawg.io/media/screenshots/884/88428c52f49af3961dc3d07e859fc81b.jpg",
+      "description": "sadasasda",
+      "year": "2016-10-25",
+      "genre": "Action",
+      "platforms": "PC",
+      "developerId": 1,
+      "publisherId": 2,
+      "rating": "0",
+      "rawgId": "144518",
+      "id": 10
     }
   ],
   "companies": [

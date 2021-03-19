@@ -29,6 +29,8 @@ class Company extends React.Component{
       }
     }
     
+
+  
       
     componentDidMount() {
       getCompanyData(getCompanyId()).then(data => {
@@ -52,7 +54,7 @@ class Company extends React.Component{
         return (
            <Grid>
              {/* функция прорисовки информации о компании*/}
-               <CompanyCard post={this.state.companyData[0]} games={this.state.gameCards} />
+               <CompanyCard post={this.state.companyData[0]} games={this.state.gameCards} />                       
            </Grid>
         ) 
         return (<Grid></Grid>)

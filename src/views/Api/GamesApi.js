@@ -48,6 +48,20 @@ const getCompaniesList = (page = 1, size = 12, filterParams = {}) => {
   })
 }
 
+// запрос на полный массив компаний для страниц дополнения/изменения базы
+const getCompanies = () => {
+  const url = `${baseUrl}companies`;
+  return fetch(url, {
+    method: 'GET',
+    ...baseRequestSettings
+  }).then(response => {
+    return response.json().then(data => ({
+      Data: data,
+      Count: response.headers.get('X-Total-Count'),
+    }))
+  })
+}
+
 // запрос на полную информацию об игре
 const getGameData = (id = 1) =>{
   const url =`${baseUrl + entityUrl}?id=${id}`;
@@ -74,6 +88,24 @@ function getCompanyData(id = 1){
   })
 }
 
+// отправка данных на сервер для записи в базу данных
+function sendData(path="", actionMethod="", data={}){
+  let url ="";
+  if(path === "game")
+    url = "http://localhost:3004/games";
+  if(path === "company")
+    url = "http://localhost:3004/companies";
+  fetch(url, {
+    method: actionMethod,
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+      console.log(response);
+  } )
+}
+
 export {
-  filter, getGameData, getCompanyData, getCompaniesList
+  filter, getGameData, getCompanyData, getCompaniesList, getCompanies, sendData
 }
