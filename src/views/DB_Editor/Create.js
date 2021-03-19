@@ -175,8 +175,7 @@ class DataCreationPage extends React.Component{
                 label="Name of the game"
                 name="name"
                 autoComplete="name"
-                autoFocus
-                onChange={(event, value) => {this.setState({dataToExport:{name: value}})}}
+                onChange={(event, value) => {}}
               />
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
@@ -190,7 +189,6 @@ class DataCreationPage extends React.Component{
                 label="Try on RAWG database"
                 name="RAWG_text_search"
                 autoComplete=""
-                autoFocus
                 onChange={(event, value) => this.setState({RAWG_searchInput: document.getElementById("RAWG_text_search").value})}
               />
             </Grid>
@@ -216,7 +214,7 @@ class DataCreationPage extends React.Component{
                 name="platforms"
                 label="Platforms"
                 id="platforms"
-                onChange={(event, value) => {this.setState({dataToExport:{platform: value}})}}
+                onChange={(event, value) => {}}
               />
             </Grid>
             {/* поле с результатами запроса RAWG и выпадающем списком, при выборе значения форма заполняется автоматически*/}
@@ -259,7 +257,7 @@ class DataCreationPage extends React.Component{
                 name="year"
                 label="Year"
                 id="year"
-                onChange={(event, value) => {this.setState({dataToExport:{year: value}})}}
+                onChange={(event, value) => {}}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -273,7 +271,7 @@ class DataCreationPage extends React.Component{
                 name="genre"
                 label="Genre"
                 id="genre"
-                onChange={(event, value) => {this.setState({dataToExport:{genre: value}})}}
+                onChange={(event, value) => {}}
               />
             </Grid>
             
@@ -288,7 +286,7 @@ class DataCreationPage extends React.Component{
                 name="rating"
                 label="Raiting"
                 id="rating"
-                onChange={(event, value) => {this.setState({dataToExport:{rating: value}})}}
+                onChange={(event, value) => {}}
               />
             </Grid>
             <Grid item xs={12} sm={6}>

@@ -20,6 +20,7 @@ import Games from "./views/Games/Games.js";
 import Companies from "./views/Companies/Companies.js";
 import Company from "./views/Companies/Company.js";
 import DataCreationPage from "./views/DB_Editor/Create.js";
+import CreateCompany from "./views/DB_Editor/CreateCompany.js";
 
 
 if(localStorage.isAuthorised != "NOT_LOGGED_IN" && localStorage.isAuthorised !="LOGGED_IN"){
@@ -130,8 +131,14 @@ export default class App extends Component{
             <Route path="/companies">
               <Companies />
             </Route>
-            <Route path="/admin">
+            <Route path="/admin/add_game">
               <DataCreationPage />
+            </Route>
+            <Route path="/admin/add_company">
+              <CreateCompany />
+            </Route>
+            <Route path="/admin">
+              <Admin />
             </Route>
             <Route path="/log_out">
               <LogOut />

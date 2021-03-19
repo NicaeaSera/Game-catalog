@@ -183,6 +183,19 @@
       "rating": "0",
       "rawgId": "144518",
       "id": 10
+    },
+    {
+      "name": "Demon's Souls",
+      "image": "https://media.rawg.io/media/games/ac3/ac3a89bfbda76082402e42b933c5825a.jpg",
+      "description": "sdaasasdd",
+      "year": "2009-02-05",
+      "genre": "Action, RPG",
+      "platforms": "PlayStation 3",
+      "developerId": 0,
+      "publisherId": 0,
+      "rating": "4.27",
+      "rawgId": "4108",
+      "id": 11
     }
   ],
   "companies": [
@@ -218,6 +231,15 @@
       "notes": "Старенькая, но крутая!",
       "isPublisher": false,
       "rawgId": null
+    },
+    {
+      "name": "Valve Corporation",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Valve-logo.jpg",
+      "description": "Valve Corporation, also known as Valve Software, is an American video game developer, publisher, and digital distribution company headquartered in Bellevue, Washington. It is the developer of the software distribution platform Steam and the Half-Life, Counter-Strike, Portal, Day of Defeat, Team Fortress, Left 4 Dead, and Dota series.",
+      "year": "1996",
+      "rating": "5",
+      "isPublisher": "true",
+      "id": 4
     }
   ]
 }

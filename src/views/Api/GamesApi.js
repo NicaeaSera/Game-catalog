@@ -95,6 +95,14 @@ function sendData(path="", actionMethod="", data={}){
     url = "http://localhost:3004/games";
   if(path === "company")
     url = "http://localhost:3004/companies";
+
+  // запрещает посылать неполные данные на сервер
+  Object.keys(data).map(key => {
+    if(data[key] == ""){
+      console.log(`Missing data in ${key}!`);
+      url =""; 
+    }
+  });
   fetch(url, {
     method: actionMethod,
     body: JSON.stringify(data),
