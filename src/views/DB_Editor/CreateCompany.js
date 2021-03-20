@@ -56,17 +56,6 @@ class CreateCompany extends React.Component{
     };
     return data;
   }
-  /*
-  "id": 1,
-    "name": "Maxis",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Maxis_logo_new.svg/400px-Maxis_logo_new.svg.png",
-    "description": "Maxis — американская компания по разработке компьютерных игр, принадлежащая Electronic Arts. Основана в 1987 году как Maxis Software, а затем стала известна как Maxis.",
-    "year": 1987,
-    "rating": 4,
-    "notes": null,
-    "isPublisher": false
-  */
-
   render(){
 
     const { classes } = this.props;

@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles'
 import { getGameData } from '../Api/GamesApi'
 import { getCompanyData } from '../Api/GamesApi'
+import { getPersonalGameRating } from '../Api/GamesApi'
 import GameCard from '../Games/GameCard'
 
 function getGameId() {
@@ -46,6 +47,11 @@ class Games extends React.Component{
           this.setState({publisherData: data.Data})
         })
       })
+      getPersonalGameRating(localStorage.login, this.state.gameId).then(data => {
+        console.log("rating data here", data, data.favourites);
+        this.setState({favourites: data.favourite});
+        this.setState({owned: data.owned});
+      })
     }
 
     componentWillUnmount() {
@@ -58,7 +64,13 @@ class Games extends React.Component{
         return (
            <Grid>
              {/* используем функцию для прорисовки данных*/}
-               <GameCard post={this.state.gameData[0]} developer={this.state.developerData[0]} publisher={this.state.publisherData[0]} />
+               <GameCard 
+               post={this.state.gameData[0]} 
+               developer={this.state.developerData[0]} 
+               publisher={this.state.publisherData[0]} 
+               rating={this.state.favourites}
+               owned={this.state.owned}
+               />
            </Grid>
         ) 
         return (<Grid></Grid>)

@@ -21,6 +21,7 @@ import Companies from "./views/Companies/Companies.js";
 import Company from "./views/Companies/Company.js";
 import DataCreationPage from "./views/DB_Editor/Create.js";
 import CreateCompany from "./views/DB_Editor/CreateCompany.js";
+import EditDB from "./views/DB_Editor/Edit.js";
 
 
 if(localStorage.isAuthorised != "NOT_LOGGED_IN" && localStorage.isAuthorised !="LOGGED_IN"){
@@ -37,6 +38,7 @@ if(localStorage.login === undefined && localStorage.login ===""){
   localStorage.logLink = "/log_in";
   localStorage.logMsg = "Log in";
 }
+
 
 function LogOut(){
   localStorage.isAuthorised = "NOT_LOGGED_IN";
@@ -78,7 +80,47 @@ export default class App extends Component{
     }
   }
   render(){
-    
+    if(localStorage.isAuthorised === "NOT_LOGGED_IN")
+      return(
+        <Router>
+        <div>
+        <nav> 
+          <AppBar position="relative">
+            <Toolbar>
+              <Link to="/" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Main page</Button>
+              </Link>    
+              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Catalog</Button> 
+              </Link>
+              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Companies</Button>
+              </Link>    
+              {/*
+              <Link to="/profile" style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Profile</Button>
+              </Link>
+              */}
+              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">Admin panel</Button>
+              </Link>       
+              <Link to={this.state.logLink} style={{color: 'white', textDecoration: 'none'}}>
+                <Button color="inherit">{this.state.logMsg}</Button>
+              </Link>
+              {/*<Button color="inherit" href={this.state.logLink}>{this.state.logMsg}" "{this.state.logInStatus}" "{this.state.logLink}</Button> */} 
+              
+            </Toolbar>
+          </AppBar>                     
+        </nav>
+        <Switch>
+            <Route path="/log_in">
+              <Sign />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    )
+
     return (
       <Router>
         <div>
@@ -94,9 +136,11 @@ export default class App extends Component{
               <Link to="/companies" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Companies</Button>
               </Link>    
+              {/*
               <Link to="/profile" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Profile</Button>
-              </Link> 
+              </Link>
+              */}
               <Link to="/admin" style={{color: 'white', textDecoration: 'none'}}>
                 <Button color="inherit">Admin panel</Button>
               </Link>       
@@ -136,6 +180,9 @@ export default class App extends Component{
             </Route>
             <Route path="/admin/add_company">
               <CreateCompany />
+            </Route>
+            <Route path="/admin/edit_DB">
+              <EditDB />
             </Route>
             <Route path="/admin">
               <Admin />

@@ -48,9 +48,22 @@ const getCompaniesList = (page = 1, size = 12, filterParams = {}) => {
   })
 }
 
-// запрос на полный массив компаний для страниц дополнения/изменения базы
+// запрос на полный массив компаний/игр для страниц дополнения/изменения базы
+const getEditData = (addres="") => {
+  const url = `${baseUrl}${addres}`;
+  return fetch(url, {
+    method: 'GET',
+    ...baseRequestSettings
+  }).then(response => {
+    return response.json().then(data => ({      
+      Data: data,
+    }))
+  })
+}
+
+// запрос на полный массив игр для страниц дополнения/изменения базы
 const getCompanies = () => {
-  const url = `${baseUrl}companies`;
+  const url = `${baseUrl}games`;
   return fetch(url, {
     method: 'GET',
     ...baseRequestSettings
@@ -95,7 +108,6 @@ function sendData(path="", actionMethod="", data={}){
     url = "http://localhost:3004/games";
   if(path === "company")
     url = "http://localhost:3004/companies";
-
   // запрещает посылать неполные данные на сервер
   Object.keys(data).map(key => {
     if(data[key] == ""){
@@ -114,6 +126,20 @@ function sendData(path="", actionMethod="", data={}){
   } )
 }
 
+// запрос на личный рейтинг игры и ее состояние
+const getPersonalGameRating = (login="", id=0) => {
+  const url = `${baseUrl}users?email=${login}`;
+  return fetch(url, {
+    method: 'GET',
+    ...baseRequestSettings
+  }).then(response => {
+    return response.json().then(data => ({      
+        favourites: data[0].favourites,
+        owned: data[0].owned
+      }))
+  })
+}
+
 export {
-  filter, getGameData, getCompanyData, getCompaniesList, getCompanies, sendData
+  filter, getGameData, getCompanyData, getCompaniesList, getCompanies, sendData, getEditData, getPersonalGameRating
 }

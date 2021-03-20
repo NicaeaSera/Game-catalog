@@ -32,13 +32,13 @@ class Admin extends React.Component{
     this.state = {
       
     };
-  } 
-
+  }
   render(){
     return (
       <Container maxWidth="lg">
-        <Grid container justify="center" alignItems="center">
-          <Link to="/admin/add_game" style={{color: 'white', textDecoration: 'none'}}>
+        <Grid container direction="column" justify="center" alignItems="center">
+          <Grid container>
+            <Link to="/admin/add_game" style={{color: 'white', textDecoration: 'none'}}>
             <Button
               type="button"
               fullWidth
@@ -47,17 +47,9 @@ class Admin extends React.Component{
               Add game
             </Button>
           </Link>
-          <Link to="/admin/add_company" style={{color: 'white', textDecoration: 'none'}}>
-            <Button
-              type="button"
-              fullWidth
-              variant="contained"
-              color="primary"
-              >
-              Edit game
-            </Button>
-          </Link>
-          <Link to="/admin/add_game" style={{color: 'white', textDecoration: 'none'}}>
+          </Grid>
+          <Grid container>
+            <Link to="/admin/add_company" style={{color: 'white', textDecoration: 'none'}}>
             <Button
               type="button"
               fullWidth
@@ -66,17 +58,22 @@ class Admin extends React.Component{
               >
               Add company
             </Button>
-          </Link> 
-          <Link to="/admin/add_game" style={{color: 'white', textDecoration: 'none'}}>
+          </Link>
+          </Grid>
+          
+          
+          {/*
+          <Link to="/admin/edit_DB" style={{color: 'white', textDecoration: 'none'}}>
             <Button
               type="button"
               fullWidth
               variant="contained"
               color="primary"
               >
-              Edit company
+              Edit database
             </Button>
           </Link>
+          */}
         </Grid>
       </Container>
     );

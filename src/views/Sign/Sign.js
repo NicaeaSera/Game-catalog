@@ -40,7 +40,9 @@ function sendAuthorisationRequest(login, password){
         alert("incorrect username or password");
         return
       }
-    })
+    }
+  )
+  
 }
 
 

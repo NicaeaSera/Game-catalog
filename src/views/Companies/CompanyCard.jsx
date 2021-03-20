@@ -14,8 +14,9 @@ import Grid from '@material-ui/core/Grid'
 import {Link} from "react-router-dom";
 import StarIcon from '@material-ui/icons/Star'
 import StarBorderIcon from '@material-ui/icons/StarBorder'
+import Container from '@material-ui/core/Container';
 
-import styles from './CsCard.style'
+import styles from './CompanyCard.style'
 import SmallCard from '../Companies/SmallCard'
 
 
@@ -33,45 +34,47 @@ const CompanyCard = props => {
   console.log("games"); 
   console.log(games); 
   return (
-    <Grid>
-      <Typography component="h2" variant="h5">
-        {post.name}
-      </Typography>
-      <Grid container>
-        <Grid container className={classes.imageBox}>
-          <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
-        </Grid>
+    <React.Fragment>
+      <Container container justify="center" className={classes.main}>
         <Grid container>
-          <Typography>
-            {`Дата основания: ${post.year}`}
+          <Typography component="h1" variant="h3" gutterBottom>
+            {post.name}
           </Typography>
-          <Typography>
-            {`Руководитель: ${post.year}`}
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            {([0,0,0,0,0]).map((rate, idx) => idx < post.rating 
-              ? <StarIcon key={`content-rating-${post.id}-${idx}`} /> 
-              : <StarBorderIcon key={`content-rating-${post.id}-${idx}`} />
-            )}
-          </Typography>
-        </Grid>
-      </Grid>
-      
-        <Typography variant="subtitle1" paragraph className={classes.cardDescription}>
-          {post.description}
-        </Typography>
-        <Typography>
-          Еще от издателя:
-        </Typography>
-        <Grid container direction="row" justify="flex-start" alignItems="stretch">
-          {/* добавлена небольшая витрина из других игр компании*/}
-          {games.map((game) =>(
-           <Grid item key={`game-${game.id}`} xs={6} sm={3} md={2}>
-              <SmallCard post={game} />
+          <Grid container>
+            <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
+            <Grid container className={classes.cardDetails}>
+              <CardContent>
+                <Typography>
+                  {`Дата основания: ${post.year}`}
+                </Typography>
+                <Typography variant="subtitle1" color="textSecondary">
+                  {([0,0,0,0,0]).map((rate, idx) => idx < post.rating 
+                    ? <StarIcon key={`content-rating-${post.id}-${idx}`} /> 
+                    : <StarBorderIcon key={`content-rating-${post.id}-${idx}`} />
+                  )}
+                </Typography>
+              </CardContent>
             </Grid>
-            ))}
+          </Grid>
+          
+          <Typography variant="subtitle1" paragraph className={classes.cardDescription}>
+            {post.description}
+          </Typography>
+          <Typography>
+            Еще от издателя:
+          </Typography>
+          <Grid container direction="row" justify="flex-start" alignItems="stretch">
+            {/* добавлена небольшая витрина из других игр компании*/}
+            {games.map((game) =>(
+            <Grid item key={`game-${game.id}`} xs={6} sm={3} md={2}>
+                <SmallCard post={game} />
+              </Grid>
+              ))}
+          </Grid>
         </Grid>
-    </Grid>
+      </Container>
+    </React.Fragment>
+    
   )
 }
 

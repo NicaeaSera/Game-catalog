@@ -8,12 +8,13 @@ const styles = theme => ({
   cardMedia: {
     maxWidth: 500,
     width: '100%',
-    maxHeight: 500,
+    maxHeight: 800,
   },
   cardDescription: {
-    display: 'box',
-    boxOrient: 'vertical',
-    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  main: {
+    backgroundColor: theme.palette.background.paper,
   }
 });
 

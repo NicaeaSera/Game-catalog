@@ -13,6 +13,7 @@ import {Link} from "react-router-dom";
 import StarIcon from '@material-ui/icons/Star'
 import StarBorderIcon from '@material-ui/icons/StarBorder'
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 
 import styles from './GCard.styles'
 
@@ -23,32 +24,21 @@ const GameCard = props => {
   const { post } = props;
   const { developer } = props;
   const { publisher } = props;
+  const { rating } = props;
+  const { owned } = props;
   
-  console.log("props");
-  console.log(props);
-
-  console.log("post");
-  console.log(post);
-
-  console.log("developer");
-  console.log(developer);
-  console.log("publisher");
-  console.log(publisher);
   if(post === undefined || developer === undefined || publisher === undefined)
     return(<Grid></Grid>)
   return (
     <React.Fragment>
-      <Container maxWidth="false">
-        <Grid>
-          <Typography component="h2" variant="h5">
-            {post.name}
+      <Container container justify="center" className={classes.main}>
+        <Grid container>
+          <Typography component="h1" variant="h3" gutterBottom>
+            {`${post.name}`}
           </Typography>
         </Grid>  
-        <Grid container spacing={2}>
-            <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
-            {/*<Hidden xsDown>*
-              <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
-            </Hidden>*/}
+        <Grid container>
+          <CardMedia className={classes.cardMedia} image={post.image} title={post.name} />
           <Grid className={classes.cardDetails}>
             <CardContent>
               <Typography>
@@ -67,6 +57,9 @@ const GameCard = props => {
                 {`Издатель: ${publisher.name}`}
               </Typography>
               <Typography>
+                {`Наличие: В желаемом`}
+              </Typography>
+              <Typography>
                 {`Рейтинг: `}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
@@ -75,12 +68,10 @@ const GameCard = props => {
                   : <StarBorderIcon key={`content-rating-${post.id}-${idx}`} />
                 )}
               </Typography>
-
             </CardContent>
-          </Grid>          
-        
+          </Grid>
         </Grid>    
-        <Grid>
+        <Grid container>
           <Typography variant="subtitle1" paragraph className={classes.cardDescription}>
               {post.description}
           </Typography>

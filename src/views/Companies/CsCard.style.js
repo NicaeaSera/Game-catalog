@@ -6,8 +6,7 @@ const styles = theme => ({
       flex: 1,
     },
     cardMedia: {
-      height: 400,
-      width: 600,
+      paddingTop: '56.25%',
     },
     cardDescription: {
       display: 'box',

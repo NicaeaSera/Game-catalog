@@ -3,16 +3,22 @@
     {
       "email": "mymail@gmail.com",
       "password": "$2a$10$RoEvz4ThRRV0MsC/HA184ehUnsTXysUdl1Gx.PD3I9XyCF9H6cQNO",
+      "favourites": "",
+      "owned": "",
       "id": 1
     },
     {
       "email": "23234@121412",
       "password": "$2a$10$p7pwKi37vm.2s7OULdy8K.DNWH5qVb8SgCbJjWg2EMW7g9dgg8M4.",
+      "favourites": "",
+      "owned": "",
       "id": 2
     },
     {
       "email": "34143@1223",
       "password": "$2a$10$.bTXwaKcQtlBDUKz1OFjCejLG5.YCojYYm6uPKYtGxKY9gb3RrHw.",
+      "favourites": "",
+      "owned": "",
       "id": 3
     }
   ],
@@ -213,7 +219,7 @@
     {
       "id": 2,
       "name": "Electronic Arts",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Maxis_logo_new.svg/400px-Maxis_logo_new.svg.pnghttps://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Electronic_Arts_Logo_2020.png/400px-Electronic_Arts_Logo_2020.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Electronic_Arts_Logo_2020.png",
       "description": "Electronic Arts (или EA) — американская корпорация, занимающаяся распространением видеоигр. Штаб-квартира компании расположена в городе Редвуд-Сити, Калифорния.",
       "year": 1982,
       "rating": 3,
