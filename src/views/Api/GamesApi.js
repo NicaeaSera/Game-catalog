@@ -122,7 +122,13 @@ function sendData(path="", actionMethod="", data={}){
       'Content-Type': 'application/json'
     }
   }).then(response => {
-      console.log(response);
+    console.log(response);
+    if(response.ok){
+       if(path === "game")
+        window.location.href = "/catalog";
+      if(path === "company")
+        window.location.href = "/companies";
+    }
   } )
 }
 

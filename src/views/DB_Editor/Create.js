@@ -120,9 +120,6 @@ class DataCreationPage extends React.Component{
     };
     return data;
   }
-  
-
-  
 
   componentDidMount() {
       getCompanies().then(data => {
@@ -147,205 +144,198 @@ class DataCreationPage extends React.Component{
   
   render(){
     const { classes } = this.props;
-
+    // поля для заполнения информации
     return (    
       <Grid container component="main" justify="center" alignItems="center">
-        {/*<Button onClick={() =>{dataAction("http://localhost:3004/test/1", "PUT", {action: "2"})}}>
-        test
-        </Button>*/}
-
-          <Container maxWidth="lg">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Add game
-            </Typography> 
-         
-          <Grid container                  
-            spacing={2} 
-            justify="center"
-            alignItems="center">
-            <Grid item xs={12} sm={6} xs={3}>
-              <TextField
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Name of the game"
-                name="name"
-                autoComplete="name"
-                onChange={(event, value) => {}}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <TextField
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                id="RAWG_text_search"
-                label="Try on RAWG database"
-                name="RAWG_text_search"
-                autoComplete=""
-                onChange={(event, value) => this.setState({RAWG_searchInput: document.getElementById("RAWG_text_search").value})}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Button 
-                type="button"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className="RAWG"
-                onClick={() => {this.searchInRAWG(this.state.RAWG_searchInput)}}>
-                  Search
-              </Button>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="platforms"
-                label="Platforms"
-                id="platforms"
-                onChange={(event, value) => {}}
-              />
-            </Grid>
-            {/* поле с результатами запроса RAWG и выпадающем списком, при выборе значения форма заполняется автоматически*/}
-            <Grid item xs={12} sm={6}>
-              <Autocomplete
-                onChange={(event, value) => {this.fillTheForm(value)}}
-                id="RAWG_search_result"
-                options={this.state.RAWG_responseData}
-                getOptionLabel={(option) => option.title}
-                renderInput={(params) => <TextField className={classes.textField} {...params} label="Results in RAWG" variant="outlined" />}
-              />
-            </Grid>
-            
-            <Grid item xs={12} sm={6} md={3}>
-              <Autocomplete
-                onChange={(event, value) => {this.setState({developerId: value.id})}}
-                id="developerId"
-                options={this.state.listOfCompanies}
-                getOptionLabel={(option) => option.title}
-                renderInput={(params) => <TextField required className={classes.textField} {...params} label="Developer" variant="outlined" />}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Autocomplete
-                onChange={(event, value) => {this.setState({publisherId: value.id})}}
-                id="publisher"
-                options={this.state.listOfPublishers}
-                getOptionLabel={(option) => option.title}
-                renderInput={(params) => <TextField required className={classes.textField} {...params} label="Publisher" variant="outlined" />}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="year"
-                label="Year"
-                id="year"
-                onChange={(event, value) => {}}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField  
-                required
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="genre"
-                label="Genre"
-                id="genre"
-                onChange={(event, value) => {}}
-              />
-            </Grid>
-            
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="rating"
-                label="Raiting"
-                id="rating"
-                onChange={(event, value) => {}}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="RAWG_id"
-                label="Id on RAWG"
-                id="RAWG_id"
-                onChange={(event, value) => {this.setState({dataToExport:{rawgId: value}})}}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="image"
-                label="Image link"
-                id="image"
-                onChange={(event, value) => {this.setState({dataToExport:{image: value}})}}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                InputLabelProps={{ shrink: true }}
-                className={classes.textField}
-                variant="outlined"
-                margin="normal"
-                fullWidth
-                name="description"
-                label="Description"
-                id="description"
-                onChange={(event, value) => {console.log(value)}}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                type="button"
-                fullWidth
-                variant="contained"
-                color="primary"
-                onClick={() =>{console.log(this.combineData());  sendData("game", "POST", this.combineData())}}>
-                Submit
-              </Button>
-            </Grid>
-          </Grid>
-        <form noValidate id="form">
-          </form>
-        </Container>
+        <Container maxWidth="lg">
+          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            Add game
+          </Typography> 
         
-      </Grid> 
+        <Grid container                  
+          spacing={2} 
+          justify="center"
+          alignItems="center">
+          <Grid item xs={12} sm={6} xs={3}>
+            <TextField
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Name of the game"
+              name="name"
+              autoComplete="name"
+              onChange={(event, value) => {}}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              id="RAWG_text_search"
+              label="Try on RAWG database"
+              name="RAWG_text_search"
+              autoComplete=""
+              onChange={(event, value) => this.setState({RAWG_searchInput: document.getElementById("RAWG_text_search").value})}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Button 
+              type="button"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className="RAWG"
+              onClick={() => {this.searchInRAWG(this.state.RAWG_searchInput)}}>
+                Search
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="platforms"
+              label="Platforms"
+              id="platforms"
+              onChange={(event, value) => {}}
+            />
+          </Grid>
+          {/* поле с результатами запроса RAWG и выпадающем списком, при выборе значения форма заполняется автоматически*/}
+          <Grid item xs={12} sm={6}>
+            <Autocomplete
+              onChange={(event, value) => {this.fillTheForm(value)}}
+              id="RAWG_search_result"
+              options={this.state.RAWG_responseData}
+              getOptionLabel={(option) => option.title}
+              renderInput={(params) => <TextField className={classes.textField} {...params} label="Results in RAWG" variant="outlined" />}
+            />
+          </Grid>
+          
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              onChange={(event, value) => {this.setState({developerId: value.id})}}
+              id="developerId"
+              options={this.state.listOfCompanies}
+              getOptionLabel={(option) => option.title}
+              renderInput={(params) => <TextField required className={classes.textField} {...params} label="Developer" variant="outlined" />}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Autocomplete
+              onChange={(event, value) => {this.setState({publisherId: value.id})}}
+              id="publisher"
+              options={this.state.listOfPublishers}
+              getOptionLabel={(option) => option.title}
+              renderInput={(params) => <TextField required className={classes.textField} {...params} label="Publisher" variant="outlined" />}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="year"
+              label="Year"
+              id="year"
+              onChange={(event, value) => {}}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField  
+              required
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="genre"
+              label="Genre"
+              id="genre"
+              onChange={(event, value) => {}}
+            />
+          </Grid>
+          
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="rating"
+              label="Raiting"
+              id="rating"
+              onChange={(event, value) => {}}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="RAWG_id"
+              label="Id on RAWG"
+              id="RAWG_id"
+              onChange={(event, value) => {this.setState({dataToExport:{rawgId: value}})}}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="image"
+              label="Image link"
+              id="image"
+              onChange={(event, value) => {this.setState({dataToExport:{image: value}})}}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              required
+              InputLabelProps={{ shrink: true }}
+              className={classes.textField}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="description"
+              label="Description"
+              id="description"
+              onChange={(event, value) => {console.log(value)}}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              type="button"
+              fullWidth
+              variant="contained"
+              color="primary"
+              onClick={() =>{console.log(this.combineData());  sendData("game", "POST", this.combineData())}}>
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </Container>
+    </Grid> 
     )
   }
 }

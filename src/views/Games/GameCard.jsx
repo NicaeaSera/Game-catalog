@@ -29,6 +29,8 @@ const GameCard = props => {
   
   if(post === undefined || developer === undefined || publisher === undefined)
     return(<Grid></Grid>)
+
+  // Карточка с игровыми данными
   return (
     <React.Fragment>
       <Container container justify="center" className={classes.main}>

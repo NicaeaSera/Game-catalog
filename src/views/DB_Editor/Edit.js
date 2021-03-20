@@ -66,7 +66,6 @@ class EditDB extends React.Component{
   render(){
 
     const { classes } = this.props;
-    
 
     return(
         <Grid container component="main" justify="center" alignItems="center">
