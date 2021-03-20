@@ -15,6 +15,11 @@ import { withStyles } from '@material-ui/core/styles'
 import { AirlineSeatReclineExtraOutlined } from '@material-ui/icons'
 
 function sendRegistrationRequest(login, password, confirm_password){
+
+  // проверяет входные данные и пытается зарегетрировать пользователя
+  // пароль должен быть не короче 4 знаков
+  // логин должен содержать @
+
   if(login === ""){
     alert("Incorrect mail");
     return

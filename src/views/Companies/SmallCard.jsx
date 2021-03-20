@@ -48,13 +48,9 @@ const SmallCard = props => {
                     </CardContent>
                 </div>                
             </CardContent>
-            
-        </CardActionArea> 
-
+        </CardActionArea>
     </Card>
-        
   )
-    
 }
 
 SmallCard.propTypes = {

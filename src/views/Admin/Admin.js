@@ -34,6 +34,7 @@ class Admin extends React.Component{
     };
   }
   render(){
+    //  страница для работы с базой данных
     return (
       <Container maxWidth="lg">
         <Grid container direction="column" justify="center" alignItems="center">
@@ -54,8 +55,7 @@ class Admin extends React.Component{
               type="button"
               fullWidth
               variant="contained"
-              color="primary"
-              >
+              color="primary">
               Add company
             </Button>
           </Link>
