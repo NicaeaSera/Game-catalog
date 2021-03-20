@@ -244,8 +244,17 @@
       "description": "Valve Corporation, also known as Valve Software, is an American video game developer, publisher, and digital distribution company headquartered in Bellevue, Washington. It is the developer of the software distribution platform Steam and the Half-Life, Counter-Strike, Portal, Day of Defeat, Team Fortress, Left 4 Dead, and Dota series.",
       "year": "1996",
       "rating": "5",
-      "isPublisher": "true",
+      "isPublisher": true,
       "id": 4
+    },
+    {
+      "name": "Facepunch Studios",
+      "image": "https://pbs.twimg.com/profile_images/1247149194093133825/N_9ul0cD_400x400.png",
+      "description": "Facepunch Studios Ltd is a British independent developer and publisher of video games headquartered in Walsall, England founded in June 2004 and incorporated on 17 March 2009 by Garry Newman. The company is most known for its sandbox video game Garry's Mod and survival game Rust. They're currently developing a sequel to Garry's Mod titled S&box, set to enter early access at some point in 2021.",
+      "year": "June 2004",
+      "rating": "4.27",
+      "isPublisher": true,
+      "id": 7
     }
   ]
 }

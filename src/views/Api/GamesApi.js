@@ -61,9 +61,9 @@ const getEditData = (addres="") => {
   })
 }
 
-// запрос на полный массив игр для страниц дополнения/изменения базы
+// запрос на полный массив компаний для страниц дополнения/изменения базы
 const getCompanies = () => {
-  const url = `${baseUrl}games`;
+  const url = `${baseUrl}companies`;
   return fetch(url, {
     method: 'GET',
     ...baseRequestSettings

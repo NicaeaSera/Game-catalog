@@ -40,8 +40,8 @@ class CreateCompany extends React.Component{
   }
 
   publisherOptions = [
-    { title: 'Yes', bool: 'true'},
-    { title: 'No', bool: 'false'},
+    { title: 'Yes', bool: true},
+    { title: 'No', bool: false},
     ]
 
   /* функция возвращает объект, готовый к отправке на сервер*/
