@@ -104,7 +104,6 @@ class Companies extends React.Component{
             </Grid>
             <Grid justify="center" container spacing={4}>
               <div className={classes.root}>
-                  <Typography>Testing page: {this.state.currentPage}</Typography>
                   {/* пагинация */}
                   <Pagination count={Math.ceil((this.state.companiesTotalCount/this.state.companiesOnPage).toFixed(10))} page={this.state.currentPage} onChange={this.moveTo} />
                 </div>

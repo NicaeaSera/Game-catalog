@@ -9,9 +9,8 @@ const styles = theme => ({
         paddingTop: '56.25%',
     },
     cardMedia: {
-      maxWidth: 500,
-      width: '100%',
-      maxHeight: 800,
+      width: "30%",
+      height: 250
     },
   });
   

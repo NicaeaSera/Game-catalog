@@ -98,7 +98,6 @@ class Sign extends React.Component {
             autoFocus
             onChange={() => this.setState({login: document.getElementById("email").value})}
           />
-          <p>TEST {this.state.login}  {this.state.password}</p>
           <TextField
             variant="outlined"
             margin="normal"

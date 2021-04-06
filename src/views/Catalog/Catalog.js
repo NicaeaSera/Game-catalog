@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Catalog = props => {
   // можно добавить больше функций контроля содержимого страницы
-  const [cardsOnPage, setCardsOnPage] = useState(5);                              // число карточек на странице
+  const [cardsOnPage, setCardsOnPage] = useState(12);                              // число карточек на странице
   const [cards, setCards] = useState([]);                                         // объект с массивом карточек
   const [totalCount, setTotalCount] = useState(0);                                // общее числор карточек
   const [currentPage, setCurrentPage] = useState(() => getCurrentPage());         // текущая страница береться из адресной строки
@@ -148,7 +148,6 @@ const Catalog = props => {
           </Grid>
           <Grid justify="center" container spacing={4}>
             <div className={classes.root}>
-                <Typography>Testing page: {currentPage}</Typography>
                 {/* пагинация вычисляет общее число страниц по общему числу карточек и их количеству на странице*/}
                 <Pagination count={Math.ceil((totalCount/cardsOnPage).toFixed(10))} page={currentPage} onChange={moveTo} />
               </div>

@@ -68,7 +68,7 @@
     {
       "name": "Space Mafness",
       "image": "https://media.rawg.io/media/screenshots/884/88428c52f49af3961dc3d07e859fc81b.jpg",
-      "description": "sadasasda",
+      "description": "Very old game",
       "year": "2016-10-25",
       "genre": "Action",
       "platforms": "PC",
@@ -81,7 +81,7 @@
     {
       "name": "Demon's Souls",
       "image": "https://media.rawg.io/media/games/ac3/ac3a89bfbda76082402e42b933c5825a.jpg",
-      "description": "sdaasasdd",
+      "description": "Demon's Souls is an action role-playing game developed by FromSoftware for the PlayStation 3 under the supervision of Japan Studio. It was published in Japan by Sony Computer Entertainment in February 2009, in North America by Atlus USA in October 2009, and in PAL territories by Namco Bandai Games in June 2010. The game is referred to as a spiritual successor to FromSoftware's King's Field series. The first installment of the Souls series, Demon's Souls is set in Boletaria, a kingdom consumed by a dark being called the Old One, following its release through the use of forbidden Soul Arts. Players take on the role of a hero brought to Boletaria to kill its fallen king Allant and pacify the Old One. Gameplay has players navigating five different worlds from a hub called the Nexus, with a heavy emphasis on challenging combat and mechanics surrounding player death and respawning. Online multiplayer allows both player cooperation and world invasions featuring player versus player combat. The game's early development was troubled due to a lack of coherent vision. Despite such issues, FromSoftware staff member Hidetaka Miyazaki was able to take over the project and helped to turn the title into what it eventually became. The game's difficulty was intended to both evoke classic video games and provide a sense of challenge and accomplishment for players. This aspect proved demanding for Miyazaki, partly because of his fear that Sony would ask the team to lower the difficulty in order to make the game more accessible. The multiplayer elements were inspired by events in Miyazaki's life. Announced in 2008, early reactions to Demon's Souls demo were seen as negative, and the game's high difficulty prompted Sony to pass on publishing the title outside of Japan. While the game met with middling reception and sales in Japan, it became a commercial and critical success in the West. The game was praised for its difficult combat and addictive gameplay, subsequently winning several awards. Its success began a series of Souls games starting with Dark Souls in 2011. A remake by Bluepoint Games and Japan Studio, was released as a launch title for the PlayStation 5 in November 2020.",
       "year": "2009-02-05",
       "genre": "Action, RPG",
       "platforms": "PlayStation 3",
@@ -142,6 +142,19 @@
       "rating": "3.13",
       "rawgId": "9810",
       "id": 15
+    },
+    {
+      "name": "Counter-Strike",
+      "image": "https://media.rawg.io/media/games/9c4/9c47f320eb73c9a02d462e12f6206b26.jpg",
+      "description": "Counter-Strike (also known as Half-Life: Counter-Strike or Counter-Strike 1.6) is a first-person shooter video game developed by Valve. It was initially developed and released as a Half-Life modification by Minh \"Gooseman\" Le and Jess Cliffe in 1999, before Le and Cliffe were hired and the game's intellectual property acquired. Counter-Strike was released by Valve for Microsoft Windows in 2000. The game is the first installment in the Counter-Strike series. Several remakes and ports have been released on Xbox, as well as OS X and Linux.",
+      "year": "2000-11-01",
+      "genre": "Shooter, Action",
+      "platforms": "PC, macOS, Linux, Xbox",
+      "developerId": 4,
+      "publisherId": 4,
+      "rating": "4.04",
+      "rawgId": "19301",
+      "id": 16
     }
   ],
   "companies": [
@@ -204,6 +217,33 @@
       "rating": "3",
       "isPublisher": true,
       "id": 8
+    },
+    {
+      "name": "Blizzard Entertainment",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Blizzard_Entertainment_Logo.svg/1200px-Blizzard_Entertainment_Logo.svg.png",
+      "description": "Blizzard Entertainment, Inc. is an American video game developer and publisher based in Irvine, California. A subsidiary of Activision Blizzard, the company was founded on February 8, 1991, under the name Silicon & Synapse, Inc. by three graduates of the University of California, Los Angeles: Michael Morhaime, Frank Pearce and Allen Adham. The company originally concentrated on the creation of game ports for other studios' games before beginning development of their own software in 1993 with games like Rock n' Roll Racing and The Lost Vikings. In 1994, the company became Chaos Studios, Inc., and eventually Blizzard Entertainment after being acquired by distributor Davidson & Associates. Shortly thereafter, Blizzard released Warcraft: Orcs & Humans. Since then, Blizzard Entertainment has created several Warcraft sequels, including highly influential massively multiplayer online role-playing game World of Warcraft in 2004, as well as three other multi-million selling video game franchises: Diablo, StarCraft and Overwatch. Their most recent projects include the expansion for Diablo III, Reaper of Souls, the online collectible card game Hearthstone, the multiplayer online battle arena Heroes of the Storm, the third and final expansion for StarCraft II: Wings of Liberty, Legacy of the Void, the multiplayer first-person hero shooter Overwatch, and the eighth expansion for World of Warcraft, Shadowlands. The games are operated through online gaming service Battle.net. On July 9, 2008, Activision merged with Vivendi Games, culminating in the inclusion of the Blizzard brand name in the title of the resulting holding company. On July 25, 2013, Activision Blizzard announced the purchase of 429 million shares from majority owner Vivendi. As a result, Activision Blizzard became a completely independent company.  Blizzard Entertainment hosts annual gaming conventions for fans to meet and to promote their games: the first BlizzCon was held in October 2005, and since then, all of the conventions have been held at the Anaheim Convention Center in Anaheim, California. BlizzCon features game-related announcements, previews of upcoming Blizzard Entertainment games and content, Q&A sessions and panels, costume contests, and playable versions of various Blizzard games. Blizzard WorldWide Invitationals were events similar to BlizzCon held in South Korea and France between 2004 and 2008.",
+      "year": "February 1991",
+      "rating": "3",
+      "isPublisher": true,
+      "id": 9
+    },
+    {
+      "name": "Ubisoft",
+      "image": "https://www.legendstore.ru/upload/iblock/710/71006cee702047f76a81d27bb0cb64c2.png",
+      "description": "Ubisoft Entertainment SA(formerly Ubi Soft Entertainment SA) is a French video game company headquartered in the Montreuil suburb of Paris with several development studios across the world. Its video game franchises include Rayman, Raving Rabbids, Prince of Persia, Assassin's Creed, Far Cry, Watch Dogs, Just Dance, and the Tom Clancy's series. According to Guillemot, Ubisoft recognised that connected sandbox games, with seamless switches between single and multiplayer modes provided the players with more fun, leading the company to switch from pursuing single-player only games to internet connected ones. According to Guillemot, Ubisoft internally refers to its reimagined self as 'before The Division' and an 'after The Division'.  In an interview with The Verge, Anne Blondel-Jouin, executive producer of The Crew turned vice-president of live operations, noted that The Crew was an early game of Ubisoft's to require a persistent internet connection in order to play. This raised initial concerns for gamers, hampering the game's initial success and sparked concerns internally at the company. ",
+      "year": "28 March 1986",
+      "rating": "4",
+      "isPublisher": true,
+      "id": 10
+    },
+    {
+      "name": "Paradox Interactive",
+      "image": "https://res-3.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1421583826/dlbcnxatnjyjf2gacyxg.png",
+      "description": "Paradox Interactive AB is a video game publisher based in Stockholm, Sweden. The company started out as the video game division of Target Games and then Paradox Entertainment (now Cabinet Entertainment) before being spun out into an independent company in 2004. Through a combination of founding new studios and purchasing independent developers, the company has grown to comprise nine first-party development studios, including their flagship Paradox Development Studio, and acts as publisher for games from other developers.  Paradox is best known for releasing historically themed strategy video games, especially grand strategy games, and has published strategy games in different settings, as well as games of other genres such as role-playing video game and management simulators. They typically continue development of their games after initial release with the creation of downloadable content, and are also known for creating games that are easy to mod.  Outside of video games, Paradox has created board games based on several of its titles, and have owned the rights to the tabletop role-playing game series World of Darkness since purchasing White Wolf Publishing in 2015. They hold an annual convention, PDXCon, which has been open to the public since 2017.",
+      "year": "1999",
+      "rating": "5",
+      "isPublisher": true,
+      "id": 11
     }
   ]
 }

@@ -19,6 +19,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder'
 const useStyles = makeStyles({
     card: {
       maxWidth: 200,
+      height: 300
     },
     cardMedia: {
       height: 200,
